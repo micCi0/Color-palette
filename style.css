@@ -1,0 +1,44 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Oswald&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(193 , 236 , 242);
+}
+.pallete{
+    /* use flex box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+    margin: 2% 0;
+    text-align: center;
+}
+.pallete .one-color{
+    margin: 8px 20px;
+    padding: 10px;
+    background: #fff;
+}
+.pallete .one-color .fill{
+    width: 180px;
+    height: 190px;
+    background: red;
+}
+.pallete .one-color .code{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+}
+.control button{
+    margin: 0 auto 15px;
+    display: block;
+    padding: 8px 7px;
+    width: 110px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgb(38, 189, 248);
+    color:#fff;
+    border: none;
+}
