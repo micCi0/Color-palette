@@ -14,7 +14,6 @@ body{
     align-items: center;
     justify-content: center;
     flex-flow: wrap;
-    margin: 7% 0;
 }
 .pallete .one-item .one-color {
     margin: 7px 20px 30px;
