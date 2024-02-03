@@ -1,38 +1,49 @@
-// declaration
-const palleteItems = document.querySelectorAll(".one-color");
-const fill = document.querySelectorAll(".fill");
-const codes = document.querySelectorAll(".code");
-const button = document.querySelector("button");
-let coppied = false;
 
-// load function
-function loadColors(){
-    let color;
-    fill.forEach((item , id) =>{
-        // use forEach to fill an element
-        color = randomColor();
-        item.style.background = color; // background 
-        codes[id].textContent = color.toUpperCase(); // hex code
-    })
+
+const pallete = document.querySelector(".pallete")
+const items = document.querySelectorAll(".one-item");
+const code =  document.querySelectorAll(".code");
+const bg =  document.querySelectorAll(".bg");
+
+let r = 42
+
+function colorPallete(){
+  for (let i = 0; i < r; i++) {
+    let color = randomColor();
+    const oneItem = document.createElement("div");
+    oneItem.className = "one-item";
+    pallete.appendChild(oneItem);
+  
+    const oneColor = document.createElement("div");
+    oneColor.className = "one-color";
+    oneItem.appendChild(oneColor);
+  
+    const bg = document.createElement("div");
+    bg.className = "bg"; 
+    bg.style.background = color;
+    oneColor.appendChild(bg);
+  
+    const code = document.createElement("p");
+    code.className = "code"; 
+    code.textContent = color;
+    oneColor.appendChild(code);
+    code.addEventListener("click" , () => copyCode(code))
+  }
 }
+
+function copyCode(code){
+  let color = code.textContent;
+  code.textContent = "Text was copied";
+  navigator.clipboard.writeText(color);
+  setInterval(() =>{
+    code.textContent = color;
+  } , 1000)
+  code.textContent = "Text was copied";
+}
+
 function randomColor(){
-    let randomHex = Math.floor(Math.random() * 0xffffff).toString(16) // random hex color
-    return `#${randomHex.padStart(6 , "0")}`;
+    let randomHex = Math.floor(Math.random() * 0xffffff).toString(16);
+    return `#${randomHex.padStart( 6, "0")}`;
 }
-palleteItems.forEach((item , id) =>{
-    item.addEventListener("click" , () =>{
-        if(coppied) return; 
-        coppied = true;
-        let code = codes[id].textContent // get code;
-        navigator.clipboard.writeText(code) // copy code
-        codes[id].textContent = "Copied";
-        // use iterval to show and hide 
-        setInterval(() =>{
-            codes[id].textContent = code;
-            coppied = false;
-        } , 1000) // 1s
-     })
-})
 
-loadColors();
-button.addEventListener("click" ,loadColors)
+onload = colorPallete();
