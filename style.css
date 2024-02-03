@@ -8,6 +8,9 @@
 body{
     background: rgb(193 , 236 , 242);
 }
+::-webkit-scrollbar {
+  width: 1px;
+}
 .pallete{
     /* use flex box */
     display: flex;
