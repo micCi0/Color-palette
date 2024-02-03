@@ -8,7 +8,9 @@
 body{
     background: #0000ff ;
 }
-
+::-webkit-scrollbar {
+  width: 1px;
+}
 .pallete{
     display: flex;
     align-items: center;
