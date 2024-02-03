@@ -44,34 +44,16 @@ body{
     cursor: pointer;
 }
 
-
-
-@media (max-width:1033px){
-    .pallete{
-        margin: 12% 0;
-    }
-}
-
-@media (max-width:578px){
-    .pallete{
-        margin: 18% 0;
-    }
-}
-
 @media(min-width:1575px){
     .pallete{
         width: 90%;
-        margin: 7% auto 0;
+        margin: 0 auto 0;
     }
 }
 @media(max-width:1300px){
     .pallete{
         width: 85%;
-        margin: 8% auto 0;
+        margin: 0 auto 0;
     }
 }
-@media(max-width:550px){
-    .pallete{
-       margin: 15vh 0;
-    }
-}
+
